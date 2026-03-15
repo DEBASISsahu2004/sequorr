@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styles from './ContactUs.module.css'
+import toast from 'react-hot-toast'
 
 import LightRays from '../../components/react-bits/lightRays/LightRays'
 
@@ -13,13 +14,13 @@ const ContactUs = () => {
     const [error, setError] = useState({
         name: "",
         email: "",
-        reachOut: "",
+        reason: "",
         message: ""
     });
     const [formData, setFormData] = useState({
         name: "",
         email: "",
-        reachOut: "",
+        reason: "",
         message: ""
     });
 
@@ -37,10 +38,11 @@ const ContactUs = () => {
     }, []);
 
     const options = [
-        { value: "general", label: "General Inquiry" },
-        { value: "partnership", label: "Partnership Opportunity" },
-        { value: "feedback", label: "Feedback/Suggestions" },
-        { value: "other", label: "Other" }
+        { value: "General Inquiry", label: "General Inquiry" },
+        { value: "Technical Support / Bug Report", label: "Technical Support / Bug Report" },
+        { value: "Partnership Opportunity", label: "Partnership Opportunity" },
+        { value: "Feedback & Suggestions", label: "Feedback & Suggestions" },
+        { value: "Media Inquiry", label: "Media Inquiry" }
     ];
 
     const handleChange = (e) => {
@@ -58,14 +60,14 @@ const ContactUs = () => {
         }));
     };
 
-    const handleSubmitClick = (e) => {
+    const handleSubmitClick = async (e) => {
         e.preventDefault();
 
         // Reset errors
         setError({
             name: "",
             email: "",
-            reachOut: "",
+            reason: "",
             message: ""
         });
 
@@ -80,7 +82,7 @@ const ContactUs = () => {
             hasError = true;
         }
         if (!selectedReason) {
-            setError((prev) => ({ ...prev, reachOut: "Please select a reason." }));
+            setError((prev) => ({ ...prev, reason: "Please select a reason." }));
             hasError = true;
         }
         if (!formData.message.trim()) {
@@ -93,11 +95,49 @@ const ContactUs = () => {
         const data = {
             name: formData.name,
             email: formData.email,
-            reachOut: selectedReason,
+            reason: selectedReason,
             message: formData.message
         };
 
         console.log(data);
+
+        try{
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_API_URL}/contact`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                toast.success(result.message || "Your message has been sent successfully!");
+                setFormData({
+                    name: "",
+                    email: "",
+                    reason: "",
+                    message: ""
+                });
+                setSelectedReason("");
+            } else {
+                if (result.errors && Array.isArray(result.errors)) {
+                    // Validation errors
+                    result.errors.forEach(error => {
+                        toast.error(error);
+                        console.error("Validation error:", error);
+                    });
+                } else {
+                    // General error
+                    toast.error(result.message || "There was an error sending your message. Please try again later.");
+                }
+            }
+
+        } catch (error) {
+            console.error("Error submitting contact form:", error);
+            toast.error("Network error. Please check your connection and try again.");
+        }
     }
 
     return (
@@ -189,7 +229,7 @@ const ContactUs = () => {
                                                 onClick={() => {
                                                     setSelectedReason(option.value);
                                                     setOpen(false);
-                                                    setError((prev) => ({ ...prev, reachOut: "" })); // Clear error on selection
+                                                    setError((prev) => ({ ...prev, reason: "" })); // Clear error on selection
                                                 }}
                                             >
                                                 {option.label}
@@ -200,7 +240,7 @@ const ContactUs = () => {
 
                             </div>
                             <div className={styles.errorSpace}>
-                                {error.reachOut && <p className={styles.errorMessage}>{error.reachOut}</p>}
+                                {error.reason && <p className={styles.errorMessage}>{error.reason}</p>}
                             </div>
                         </div>
 
