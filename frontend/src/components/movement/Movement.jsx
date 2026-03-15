@@ -8,12 +8,14 @@ const Movement = () => {
         <>
             {/* WorkItem Section */}
             <section className={styles.movementSection}>
-                <div className="sectionTitleContainer">
-                    <p className="sectionTitleText">More Than an App. A Movement.</p>
-                </div>
+                <div className="sectionHeader">
+                    <div className="sectionTitleContainer">
+                        <p className="sectionTitleText">More Than an App. A Movement.</p>
+                    </div>
 
-                <div className="sectionDescriptionContainer">
-                    <p className="sectionDescriptionText">This is where progress feels lighter, because you're moving together. It's shared through everyday wins, group energy, and collection motivation.</p>
+                    <div className="sectionDescriptionContainer">
+                        <p className="sectionDescriptionText">This is where progress feels lighter, because you're moving together. It's shared through everyday wins, group energy, and collection motivation.</p>
+                    </div>
                 </div>
 
                 <div className={styles.movementShowcase}>

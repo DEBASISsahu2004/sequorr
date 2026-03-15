@@ -47,12 +47,14 @@ const PERSONAS = [
 const Audience = () => {
     return (
         <section className={styles.audienceSection}>
-            <div className="sectionTitleContainer">
-                <p className="sectionTitleText">Not Just Fitness. A Shared Experience.</p>
-            </div>
+            <div className="sectionHeader">
+                <div className="sectionTitleContainer">
+                    <p className="sectionTitleText">Not Just Fitness. A Shared Experience.</p>
+                </div>
 
-            <div className="sectionDescriptionContainer">
-                <p className="sectionDescriptionText">Sequorr brings people, movement, and motivation together — so staying active feels natural, social, and sustainable.</p>
+                <div className="sectionDescriptionContainer">
+                    <p className="sectionDescriptionText">Sequorr brings people, movement, and motivation together — so staying active feels natural, social, and sustainable.</p>
+                </div>
             </div>
 
             <div className={styles.personasGrid}>

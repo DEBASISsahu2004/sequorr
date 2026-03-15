@@ -25,12 +25,14 @@ const Motivation = () => {
         <>
             {/* Motivation Section */}
             <section className={styles.motivationSection}>
-                <div className="sectionTitleContainer">
-                    <p className="sectionTitleText">What you will experience</p>
-                </div>
+                <div className="sectionHeader">
+                    <div className="sectionTitleContainer">
+                        <p className="sectionTitleText">What you will experience</p>
+                    </div>
 
-                <div className="sectionDescriptionContainer">
-                    <p className="sectionDescriptionText">Not just features — real feelings that keep you coming back.</p>
+                    <div className="sectionDescriptionContainer">
+                        <p className="sectionDescriptionText">Not just features — real feelings that keep you coming back.</p>
+                    </div>
                 </div>
 
                 <div className={styles.motivationShowcase}>

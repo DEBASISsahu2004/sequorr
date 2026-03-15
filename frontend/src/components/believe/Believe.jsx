@@ -46,12 +46,14 @@ const Believe = () => {
             {/* What We Believe Section */}
             <section className={styles.believeSection}>
                 <div className={styles.believeHeader}>
-                    <div className="sectionTitleContainer">
-                        <p className="sectionTitleText">What we believe</p>
-                    </div>
+                    <div className="sectionHeader">
+                        <div className="sectionTitleContainer">
+                            <p className="sectionTitleText">What we believe</p>
+                        </div>
 
-                    <div className="sectionDescriptionContainer">
-                        <p className="sectionDescriptionText">These beliefs guide how Sequorr is designed — and how it should feel to use.</p>
+                        <div className="sectionDescriptionContainer">
+                            <p className="sectionDescriptionText">These beliefs guide how Sequorr is designed — and how it should feel to use.</p>
+                        </div>
                     </div>
                 </div>
 

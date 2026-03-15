@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Navbar from '../../components/navbar/Navbar'
 import styles from './About.module.css'
 
 import FitBoxOne from '../../assets/about/aboutFitness/box1.svg'
@@ -31,6 +32,7 @@ const About = () => {
 
     return (
         <>
+            <Navbar />
             {/* About Hero section */}
             <section className={styles.aboutHeroSection}>
                 <div className={styles.aboutHeroBackground}>
@@ -64,12 +66,14 @@ const About = () => {
             {/* About Fitness Section */}
             <section className={styles.aboutFitnessSection}>
                 <div className={styles.aboutFitnessHeader}>
-                    <div className="sectionTitleContainer">
-                        <p className="sectionTitleText">What we think about fitness</p>
-                    </div>
+                    <div className="sectionHeader">
+                        <div className="sectionTitleContainer">
+                            <p className="sectionTitleText">What we think about fitness</p>
+                        </div>
 
-                    <div className="sectionDescriptionContainer">
-                        <p className="sectionDescriptionText">Not as a goal to chase — but as a habit to return to.</p>
+                        <div className="sectionDescriptionContainer">
+                            <p className="sectionDescriptionText">Not as a goal to chase — but as a habit to return to.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -140,15 +144,17 @@ const About = () => {
             {/* Why Sequorr Section */}
             <section className={styles.whySequorrSection}>
                 <div className={styles.whySequorrHeader}>
-                    <div className="sectionTitleContainer">
-                        <p className="sectionTitleText">Why we're building Sequorr</p>
-                    </div>
+                    <div className="sectionHeader">
+                        <div className="sectionTitleContainer">
+                            <p className="sectionTitleText">Why we're building Sequorr</p>
+                        </div>
 
-                    <div className="sectionDescriptionContainer">
-                        <p className="sectionDescriptionText">
-                            Every feature in Sequorr is built to help you show up more often — without pressure or perfection.<br />
-                            Instead of pushing harder, Sequorr focuses on making movement feel lighter, social, and sustainable.
-                        </p>
+                        <div className="sectionDescriptionContainer">
+                            <p className="sectionDescriptionText">
+                                Every feature in Sequorr is built to help you show up more often — without pressure or perfection.<br />
+                                Instead of pushing harder, Sequorr focuses on making movement feel lighter, social, and sustainable.
+                            </p>
+                        </div>
                     </div>
                 </div>
 

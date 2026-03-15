@@ -62,7 +62,7 @@
     /* Larger text as per image */
     font-weight: 800;
     font-style: italic;
-    color: #000;
+    color: #0C500F;
     text-transform: lowercase;
     display: flex;
     align-items: center;
@@ -170,7 +170,6 @@
 .socialLinks a img {
     width: 20px;
     height: 20px;
-    filter: invert(0.7);
     opacity: 0.7;
 }
 

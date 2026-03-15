@@ -1,39 +1,31 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
 import { Toaster } from 'react-hot-toast'
 
-import Navbar from './components/navbar/Navbar'
-import Home from './pages/home/Home'
-import Features from './pages/features/Features'
-import About from './pages/about/About'
-import Blogs from './pages/blogs/Blogs'
-import ContactUs from './pages/contactUs/ContactUs'
+import { lazy, Suspense } from 'react'
 
-function ScrollToTop() {
-  const { pathname } = useLocation()
+const Home = lazy(() => import('./pages/home/Home'))
+const Features = lazy(() => import('./pages/features/Features'))
+const About = lazy(() => import('./pages/about/About'))
+const Blogs = lazy(() => import('./pages/blogs/Blogs'))
+const ContactUs = lazy(() => import('./pages/contactUs/ContactUs'))
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
-
-  return null
-}
+import Loading from './components/loading/Loading'
 
 function App() {
   return (
     <>
       <Toaster />
       <Router>
-        <ScrollToTop />
-        <Navbar />
+        <Suspense fallback={<Loading/>}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/features" element={<Features />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/features" element={<Features/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/blogs" element={<Blogs/>} />
+          <Route path="/contact" element={<ContactUs/>} />
         </Routes>
+        </Suspense>
       </Router>
     </>
   )

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Navbar from '../../components/navbar/Navbar'
 import styles from './Features.module.css'
 
 import Graphics from '../../assets/feature/mobileGraphic.svg'
@@ -107,6 +108,7 @@ const Features = () => {
 
     return (
         <>
+            <Navbar />
             {/* Features Hero section */}
             <section className={styles.featuresSection}>
                 <div className={styles.featuresBackground}>
@@ -153,12 +155,14 @@ const Features = () => {
             {/* Features Type Section */}
             <section className={`${styles.featuresSection} ${styles.featuresTypeSection}`}>
                 <div className={styles.typeHeader}>
-                    <div className="sectionTitleContainer">
-                        <p className="sectionTitleText">Designed for consistency, not overwhelm.</p>
-                    </div>
+                    <div className="sectionHeader">
+                        <div className="sectionTitleContainer">
+                            <p className="sectionTitleText">Designed for consistency, not overwhelm.</p>
+                        </div>
 
-                    <div className="sectionDescriptionContainer">
-                        <p className="sectionDescriptionText">Every feature in Sequorr is built to help you show up more often — without pressure or perfection. Instead of pushing harder, Sequorr focuses on making movement feel lighter, social, and sustainable.</p>
+                        <div className="sectionDescriptionContainer">
+                            <p className="sectionDescriptionText">Every feature in Sequorr is built to help you show up more often — without pressure or perfection. Instead of pushing harder, Sequorr focuses on making movement feel lighter, social, and sustainable.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -188,15 +192,17 @@ const Features = () => {
             {/* Features Gallery Section */}
             <section className={styles.featuresGallerySection}>
                 <div className={styles.typeHeader}>
-                    <div className="sectionTitleContainer">
-                        <p className="sectionTitleText">Built to fit into real life.</p>
-                    </div>
+                    <div className="sectionHeader">
+                        <div className="sectionTitleContainer">
+                            <p className="sectionTitleText">Built to fit into real life.</p>
+                        </div>
 
-                    <div className="sectionDescriptionContainer">
-                        <p className="sectionDescriptionText">
-                            Fitness doesn't live in a single moment — it flows through your day.<br />
-                            Sequorr supports movement whenever it happens, whether it's a morning walk, a quick break, or a weekend activity.
-                        </p>
+                        <div className="sectionDescriptionContainer">
+                            <p className="sectionDescriptionText">
+                                Fitness doesn't live in a single moment — it flows through your day.<br />
+                                Sequorr supports movement whenever it happens, whether it's a morning walk, a quick break, or a weekend activity.
+                            </p>
+                        </div>
                     </div>
                 </div>
 

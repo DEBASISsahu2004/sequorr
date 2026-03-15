@@ -14,7 +14,7 @@
   --border-subtle: rgba(var(--primary-green-rgb), 0.2);
   --border-active: rgba(var(--primary-green-rgb), 0.4);
   --glass-bg: rgba(var(--primary-green-rgb), 0.1);
-  --glass-blur: blur(12px);
+  --glass-blur: blur(4px);
 
   /* Transitions */
   --transition-smooth: all 0.3s ease;
@@ -45,6 +45,7 @@ body {
   display: none;
 }
 
+
 .sectionTitleContainer {
   width: fit-content;
   border-radius: 50px;
@@ -58,6 +59,15 @@ body {
   font-size: clamp(13px, 1.5vw, 16px);
   font-weight: 500;
   color: #FFFFFF;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
 }
 
 .sectionDescriptionContainer {

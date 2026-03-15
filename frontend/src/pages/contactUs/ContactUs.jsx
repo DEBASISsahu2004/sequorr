@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+import Navbar from '../../components/navbar/Navbar'
 import styles from './ContactUs.module.css'
 import toast from 'react-hot-toast'
 
@@ -142,6 +143,7 @@ const ContactUs = () => {
 
     return (
         <>
+            <Navbar />
             {/* Contact Us Form section */}
             <section className={styles.contactUsSection}>
                 <form onSubmit={handleSubmitClick} className={styles.contactUsForm}>

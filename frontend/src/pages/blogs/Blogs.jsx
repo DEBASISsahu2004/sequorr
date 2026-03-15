@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from '../../components/navbar/Navbar'
 import styles from './Blogs.module.css'
 
 import { GridScan } from '../../components/react-bits/gridScan/GridScan.jsx'
@@ -12,22 +13,10 @@ const Blogs = () => {
 
     return (
         <>
+            <Navbar />
             {/* Blogs Hero section */}
             <section className={styles.blogsHeroSection}>
-                <div className={styles.blogsHeroBackground}>
-                    <GridScan
-                        sensitivity={0.55}
-                        lineThickness={1}
-                        linesColor="#2eee34"
-                        gridScale={0.1}
-                        scanColor="#2EEE34"
-                        scanOpacity={0.4}
-                        enablePost
-                        bloomIntensity={0.6}
-                        chromaticAberration={0.002}
-                        noiseIntensity={0.01}
-                    />
-                </div>
+            
 
                 <div className={styles.blogsHeroContent}>
                     <div className={styles.blogsHeroTagline}>

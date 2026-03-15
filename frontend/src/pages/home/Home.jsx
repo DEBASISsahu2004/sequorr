@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from '../../components/navbar/Navbar'
 import styles from './Home.module.css'
 
 import Dither from '../../components/react-bits/dither/Dither'
@@ -14,6 +15,7 @@ const Home = () => {
 
     return (
         <>
+            <Navbar />
             {/* Hero section */}
             <section className={styles.heroSection}>
                 <div className={styles.heroBackground}>
@@ -50,12 +52,14 @@ const Home = () => {
 
             {/* About section */}
             <section className={styles.aboutSection}>
-                <div className="sectionTitleContainer">
-                    <p className="sectionTitleText">Not Just Fitness. A Shared Experience.</p>
-                </div>
+                <div className="sectionHeader">
+                    <div className="sectionTitleContainer">
+                        <p className="sectionTitleText">Not Just Fitness. A Shared Experience.</p>
+                    </div>
 
-                <div className="sectionDescriptionContainer">
-                    <p className="sectionDescriptionText">Sequorr brings people, movement, and motivation together — so staying active feels natural, social, and sustainable.</p>
+                    <div className="sectionDescriptionContainer">
+                        <p className="sectionDescriptionText">Sequorr brings people, movement, and motivation together — so staying active feels natural, social, and sustainable.</p>
+                    </div>
                 </div>
 
                 <div className={styles.aboutBentoGrid}>
