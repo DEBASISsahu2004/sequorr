@@ -1,16 +1,75 @@
-# React + Vite
+# Sequorr Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the frontend of **Sequorr**, a modern web application built with a focus on immersive user experiences, 3D graphics, and fluid animations.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The frontend is built using a powerful and modern stack:
 
-## React Compiler
+- **Core**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **3D Graphics**: [Three.js](https://threejs.org/) + [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber)
+- **Fluid Animations**: [Motion](https://motion.dev/) (formerly Framer Motion)
+- **Routing**: [React Router 7](https://reactrouter.com/)
+- **State & Utilities**: 
+  - `react-hot-toast` for notifications.
+  - `face-api.js` for intelligent facial detection/analysis.
+  - `ogl` and `postprocessing` for advanced high-performance visual effects.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 Project Structure
 
-## Expanding the ESLint configuration
+```text
+frontend/
+├── public/              # Static assets (fonts, icons)
+├── src/
+│   ├── assets/          # Project-wide images and media
+│   ├── components/      # Reusable UI building blocks
+│   │   ├── react-bits/  # Specialized high-performance UI components
+│   │   └── ...          # Domain-specific components (Navbar, Footer, etc.)
+│   ├── pages/           # High-level route views (Home, About, Blog, etc.)
+│   ├── App.jsx          # Main application shell and routing
+│   ├── main.jsx         # Entry point
+│   └── index.css        # Global design tokens and styles
+├── .env                 # Environment configuration (VITE_BACKEND_API_URL)
+└── vite.config.js       # Build and development configuration
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (Latest LTS recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Configure environment variables:
+   Create a `.env` file in the `frontend` root and add your backend API URL:
+   ```env
+   VITE_BACKEND_API_URL=your_api_url_here
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+The application will be available at `http://localhost:5173`.
+
+## 📜 Available Scripts
+
+- `npm run dev`: Start the development server with Hot Module Replacement (HMR).
+- `npm run build`: Create an optimized production build in the `dist/` directory.
+- `npm run lint`: Run ESLint to identify and fix code style issues.
+- `npm run preview`: Locally preview the production build.
+
+---
+
+### Core Principles
+- **Aesthetics First**: Every component is designed to be visually stunning and highly interactive.
+- **Performance**: Leveraging Vite for fast builds and optimized 3D rendering for smooth frame rates.
+- **Responsiveness**: Fully adaptive layouts ensuring a premium experience on mobile, tablet, and desktop.

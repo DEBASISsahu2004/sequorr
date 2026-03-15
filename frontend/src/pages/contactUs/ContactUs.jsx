@@ -6,6 +6,7 @@ import LightRays from '../../components/react-bits/lightRays/LightRays'
 
 import DropDownArrow from '../../assets/contactUs/arrow.svg'
 import Believe from '../../components/believe/Believe'
+import FeaturedBlogs from '../../components/featuredBlogs/FeaturedBlogs'
 import Footer from '../../components/footer/Footer'
 
 const ContactUs = () => {
@@ -269,6 +270,9 @@ const ContactUs = () => {
 
             {/* Belive Section */}
             < Believe />
+
+            {/* Featured Blogs Section */}
+            < FeaturedBlogs />
 
             {/* Footer Section */}
             < Footer />
