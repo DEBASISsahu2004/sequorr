@@ -16,7 +16,14 @@ const Blogs = () => {
             <Navbar />
             {/* Blogs Hero section */}
             <section className={styles.blogsHeroSection}>
-            
+                <div className={styles.blogsHeroBackground}>
+                    <GridScan
+                        className={styles.gridScan}
+                        scanColor="#00ff00"
+                        scanSpeed={1.0}
+                        gridColor="#111"
+                    />
+                </div>
 
                 <div className={styles.blogsHeroContent}>
                     <div className={styles.blogsHeroTagline}>
