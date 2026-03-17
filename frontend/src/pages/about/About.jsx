@@ -6,7 +6,7 @@ import FitBoxOne from '../../assets/about/aboutFitness/box1.svg'
 import FitBoxTwo1 from '../../assets/about/aboutFitness/boxTwo1.svg'
 import FitBoxTwo2 from '../../assets/about/aboutFitness/boxTwo2.svg'
 import FitBoxThree from '../../assets/about/aboutFitness/box3.svg'
-import FitBoxFour from '../../assets/about/aboutFitness/box4.svg'
+import FitBoxFour from '../../assets/about/aboutFitness/box4.jpeg'
 import FitRing from '../../assets/about/aboutFitness/ring.svg'
 
 import Threads from '../../components/react-bits/threads/Threads'
@@ -14,6 +14,7 @@ import Audience from '../../components/audience/Audience'
 import Believe from '../../components/believe/Believe'
 import Movement from '../../components/movement/Movement'
 import Footer from '../../components/footer/Footer'
+import useScrollAnimation from '../../hooks/useScrollAnimation'
 
 const About = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -29,6 +30,8 @@ const About = () => {
     const handleJoinClick = () => {
         console.log('Join the Movement clicked');
     }
+
+    useScrollAnimation();
 
     return (
         <>
@@ -72,7 +75,7 @@ const About = () => {
                         </div>
 
                         <div className="sectionDescriptionContainer">
-                            <p className="sectionDescriptionText">Not as a goal to chase — but as a habit to return to.</p>
+                            <p className="sectionDescriptionText reveal">Not as a goal to chase — but as a habit to return to.</p>
                         </div>
                     </div>
                 </div>
@@ -80,13 +83,13 @@ const About = () => {
                 <div className={styles.fitnessContent}>
                     <div className={`${styles.fitnessBlock} ${styles.fitnessBlock1}`}>
                         <div className={styles.fitnessTextContent}>
-                            <h1 className={styles.fitnessBlockTitle}>Reframing Fitness</h1>
-                            <p className={styles.fitnessBlockText}>
+                            <h1 className={`${styles.fitnessBlockTitle} reveal`}>Reframing Fitness</h1>
+                            <p className={`${styles.fitnessBlockText} reveal`}>
                                 Fitness is often treated as something you achieve.<br />
                                 A finish line. A peak. A result.<br />
                                 But in real life, movement doesn't work that way.
                             </p>
-                            <p className={styles.fitnessBlockText}>
+                            <p className={`${styles.fitnessBlockText} reveal`}>
                                 Some days you feel energetic.<br />
                                 Some days you don't.<br />
                                 Some weeks are consistent. Others aren't.
@@ -103,21 +106,21 @@ const About = () => {
                             <img src={FitBoxTwo2} alt="boxTwo2" className={styles.fitnessImage} />
                         </div>
                         <div className={styles.fitnessTextContent}>
-                            <h1 className={styles.fitnessBlockTitle}>Fitness as Continuity</h1>
-                            <p className={styles.fitnessBlockText}>
+                            <h1 className={`${styles.fitnessBlockTitle} reveal`}>Fitness as Continuity</h1>
+                            <p className={`${styles.fitnessBlockText} reveal`}>
                                 What matters most isn't how hard you push in a single moment.<br />
                                 It's whether movement feels approachable enough to come back to.</p>
-                            <p className={styles.fitnessBlockText}>Sequorr focuses on continuity — helping people stay connected to movement over time, even when life shifts, motivation dips, or routines change.</p>
+                            <p className={`${styles.fitnessBlockText} reveal`}>Sequorr focuses on continuity — helping people stay connected to movement over time, even when life shifts, motivation dips, or routines change.</p>
                         </div>
                     </div>
 
                     <div className={`${styles.fitnessBlock} ${styles.fitnessBlock3}`}>
                         <div className={styles.fitnessTextContent}>
-                            <h1 className={styles.fitnessBlockTitle}>The Role of Community</h1>
-                            <p className={styles.fitnessBlockText}>
+                            <h1 className={`${styles.fitnessBlockTitle} reveal`}>The Role of Community</h1>
+                            <p className={`${styles.fitnessBlockText} reveal`}>
                                 Movement becomes easier to return to when it isn't carried alone.<br />
                                 Seeing others show up — imperfectly, honestly, consistently — creates a quiet form of motivation.</p>
-                            <p className={styles.fitnessBlockText}>Not pressure. Not comparison. Just presence.</p>
+                            <p className={`${styles.fitnessBlockText} reveal`}>Not pressure. Not comparison. Just presence.</p>
                         </div>
                         <div className={styles.fitnessMediaContent}>
                             <img src={FitBoxThree} alt="boxThree" className={styles.fitnessImage} />
@@ -129,8 +132,8 @@ const About = () => {
                             <img src={FitBoxFour} alt="fitBoxFour" className={styles.fitnessImage} />
                         </div>
                         <div className={styles.fitnessTextContent}>
-                            <h1 className={styles.fitnessBlockTitle}>Redefining Progress</h1>
-                            <p className={styles.fitnessBlockText}>
+                            <h1 className={`${styles.fitnessBlockTitle} reveal`}>Redefining Progress</h1>
+                            <p className={`${styles.fitnessBlockText} reveal`}>
                                 Progress doesn't look the same for everyone.<br />
                                 Sometimes it's moving more.<br />
                                 Sometimes it's feeling better.<br />
@@ -150,7 +153,7 @@ const About = () => {
                         </div>
 
                         <div className="sectionDescriptionContainer">
-                            <p className="sectionDescriptionText">
+                            <p className="sectionDescriptionText reveal">
                                 Every feature in Sequorr is built to help you show up more often — without pressure or perfection.<br />
                                 Instead of pushing harder, Sequorr focuses on making movement feel lighter, social, and sustainable.
                             </p>
@@ -160,13 +163,13 @@ const About = () => {
 
                 <div className={styles.whySequorrContent}>
                     <div className={styles.whySequorrBlock}>
-                        <h3 className={styles.whySequorrBlockTitle}>Movement has always been a part of everyday life.</h3>
-                        <p className={styles.whySequorrBlockText}>Over time, fitness tools became more structured, more detailed, and more focused on measuring outcomes. For many people, that made staying active feel like something you had to opt into — rather than something that naturally fits into life.</p>
+                        <h3 className={`${styles.whySequorrBlockTitle} reveal`}>Movement has always been a part of everyday life.</h3>
+                        <p className={`${styles.whySequorrBlockText} reveal`}>Over time, fitness tools became more structured, more detailed, and more focused on measuring outcomes. For many people, that made staying active feel like something you had to opt into — rather than something that naturally fits into life.</p>
                     </div>
 
                     <div className={styles.whySequorrBlock}>
-                        <h3 className={styles.whySequorrBlockTitle}>We noticed that what most people struggle with isn't effort — it's continuity.</h3>
-                        <p className={styles.whySequorrBlockText}>
+                        <h3 className={`${styles.whySequorrBlockTitle} reveal`}>We noticed that what most people struggle with isn't effort — it's continuity.</h3>
+                        <p className={`${styles.whySequorrBlockText} reveal`}>
                             Not showing up perfectly.<br />
                             Not hitting goals every time.<br />
                             But simply staying connected to movement over time.
@@ -174,8 +177,8 @@ const About = () => {
                     </div>
 
                     <div className={styles.whySequorrBlock}>
-                        <h3 className={styles.whySequorrBlockTitle}>Sequorr exists to support a different relationship with fitness.</h3>
-                        <p className={styles.whySequorrBlockText}>One where movement feels shared instead of solitary. Where encouragement matters as much as tracking. And where consistency grows naturally through community and support.</p>
+                        <h3 className={`${styles.whySequorrBlockTitle} reveal`}>Sequorr exists to support a different relationship with fitness.</h3>
+                        <p className={`${styles.whySequorrBlockText} reveal`}>One where movement feels shared instead of solitary. Where encouragement matters as much as tracking. And where consistency grows naturally through community and support.</p>
                     </div>
                 </div>
             </section >

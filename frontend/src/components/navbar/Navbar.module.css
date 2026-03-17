@@ -61,6 +61,7 @@
     transition: var(--transition-smooth);
     position: relative;
     padding: 4px 0;
+    cursor: pointer;
 }
 
 .navLink::after {

@@ -7,6 +7,7 @@ import Graphics from '../../assets/feature/mobileGraphic.svg'
 import DarkVeil from '../../components/react-bits/darkVeil/DarkVeil'
 import Motivation from '../../components/motivation/Motivation'
 import Footer from '../../components/footer/Footer'
+import useScrollAnimation from '../../hooks/useScrollAnimation'
 
 // morning
 import MorningGrid1 from '../../assets/feature/gallery/morning/grid1.svg'
@@ -106,6 +107,8 @@ const Features = () => {
         console.log('Join the Movement clicked');
     }
 
+    useScrollAnimation();
+
     return (
         <>
             <Navbar />
@@ -161,7 +164,7 @@ const Features = () => {
                         </div>
 
                         <div className="sectionDescriptionContainer">
-                            <p className="sectionDescriptionText">Every feature in Sequorr is built to help you show up more often — without pressure or perfection. Instead of pushing harder, Sequorr focuses on making movement feel lighter, social, and sustainable.</p>
+                            <p className="sectionDescriptionText reveal">Every feature in Sequorr is built to help you show up more often — without pressure or perfection. Instead of pushing harder, Sequorr focuses on making movement feel lighter, social, and sustainable.</p>
                         </div>
                     </div>
                 </div>
@@ -171,9 +174,9 @@ const Features = () => {
                 </div>
 
                 <div className={styles.typeDetail}>
-                    <h3 className={styles.typeDetailTitle}>{featureTypes[activeTab].title}</h3>
-                    <p className={styles.typeDetailDescription}>{featureTypes[activeTab].description}</p>
-                    <p className={styles.typeDetailNote}>{featureTypes[activeTab].note}</p>
+                    <h3 className={`${styles.typeDetailTitle} reveal`}>{featureTypes[activeTab].title}</h3>
+                    <p className={`${styles.typeDetailDescription} reveal`}>{featureTypes[activeTab].description}</p>
+                    <p className={`${styles.typeDetailNote} reveal`}>{featureTypes[activeTab].note}</p>
 
                     <div className={styles.typeTags}>
                         {featureTypes.map((feature, index) => (
@@ -198,7 +201,7 @@ const Features = () => {
                         </div>
 
                         <div className="sectionDescriptionContainer">
-                            <p className="sectionDescriptionText">
+                            <p className="sectionDescriptionText reveal">
                                 Fitness doesn't live in a single moment — it flows through your day.<br />
                                 Sequorr supports movement whenever it happens, whether it's a morning walk, a quick break, or a weekend activity.
                             </p>

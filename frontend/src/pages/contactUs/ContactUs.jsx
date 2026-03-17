@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+import useScrollAnimation from '../../hooks/useScrollAnimation'
 import Navbar from '../../components/navbar/Navbar'
 import styles from './ContactUs.module.css'
 import toast from 'react-hot-toast'
@@ -11,6 +12,7 @@ import Footer from '../../components/footer/Footer'
 
 const ContactUs = () => {
     const [selectedReason, setSelectedReason] = useState("");
+    useScrollAnimation();
     const [open, setOpen] = useState(false);
     const [error, setError] = useState({
         name: "",
@@ -170,7 +172,7 @@ const ContactUs = () => {
                             Get in -<br />
                             Touch with us
                         </h1>
-                        <p className={styles.formDescription}>Questions, ideas, or partnerships — we're always happy to hear from you.</p>
+                        <p className={`${styles.formDescription} reveal`}>Questions, ideas, or partnerships — we're always happy to hear from you.</p>
                         <p className={styles.formContactInfo}>
                             Email:<br />
                             team@sequorr.com

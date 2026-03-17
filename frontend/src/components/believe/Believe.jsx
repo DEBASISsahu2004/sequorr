@@ -7,6 +7,7 @@ import Option2 from '../../assets/believe/option2.svg'
 import Option3 from '../../assets/believe/option3.svg'
 import Option4 from '../../assets/believe/option4.svg'
 import Option5 from '../../assets/believe/option5.svg'
+import useScrollAnimation from '../../hooks/useScrollAnimation'
 
 const Believe = () => {
     const believes = [
@@ -41,6 +42,8 @@ const Believe = () => {
 
     const activeBelief = believes[activeIndex];
 
+    useScrollAnimation();
+
     return (
         <>
             {/* What We Believe Section */}
@@ -52,7 +55,7 @@ const Believe = () => {
                         </div>
 
                         <div className="sectionDescriptionContainer">
-                            <p className="sectionDescriptionText">These beliefs guide how Sequorr is designed — and how it should feel to use.</p>
+                            <p className="sectionDescriptionText reveal">These beliefs guide how Sequorr is designed — and how it should feel to use.</p>
                         </div>
                     </div>
                 </div>
@@ -76,7 +79,7 @@ const Believe = () => {
                     <div className={styles.believeBlockContent}>
                         <img className={styles.believeBlockContentImage} src={activeBelief.image} alt={activeBelief.title} />
                         <div className={styles.believeBlockContentOverlay}>
-                            <p className={styles.believeBlockContentText}>{activeBelief.description}</p>
+                            <p className={`${styles.believeBlockContentText} reveal`}>{activeBelief.description}</p>
                         </div>
                     </div>
                 </div>

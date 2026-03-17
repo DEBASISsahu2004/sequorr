@@ -1,5 +1,5 @@
-import React from 'react'
 import styles from './Audience.module.css'
+import useScrollAnimation from '../../hooks/useScrollAnimation'
 
 // Import Icons
 import beginnersIcon from '../../assets/homeAudience/beginnersIcon.svg'
@@ -45,6 +45,7 @@ const PERSONAS = [
 ];
 
 const Audience = () => {
+    useScrollAnimation();
     return (
         <section className={styles.audienceSection}>
             <div className="sectionHeader">
@@ -53,7 +54,7 @@ const Audience = () => {
                 </div>
 
                 <div className="sectionDescriptionContainer">
-                    <p className="sectionDescriptionText">Sequorr brings people, movement, and motivation together — so staying active feels natural, social, and sustainable.</p>
+                    <p className="sectionDescriptionText reveal">Sequorr brings people, movement, and motivation together — so staying active feels natural, social, and sustainable.</p>
                 </div>
             </div>
 
@@ -63,8 +64,8 @@ const Audience = () => {
                 {PERSONAS.map((persona) => (
                     <div key={persona.id} className={styles.personaCard} style={{ backgroundImage: `url(${persona.backgroundImage})` }}>
                         <img className={styles.cardIcon} src={persona.icon} alt={`${persona.title} icon`} />
-                        <h2 className={styles.cardTitle}>{persona.title}</h2>
-                        <p className={styles.cardDescription}>{persona.description}</p>
+                        <h2 className={`${styles.cardTitle} reveal`}>{persona.title}</h2>
+                        <p className={`${styles.cardDescription} reveal`}>{persona.description}</p>
                     </div>
                 ))}
             </div>

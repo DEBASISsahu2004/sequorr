@@ -8,11 +8,14 @@ import Movement from '../../components/movement/Movement'
 import Motivation from '../../components/motivation/Motivation'
 import FeaturedBlogs from '../../components/featuredBlogs/FeaturedBlogs'
 import Footer from '../../components/footer/Footer'
+import useScrollAnimation from '../../hooks/useScrollAnimation'
 
 const Home = () => {
     const handleJoinClick = () => {
         console.log('Join the Movement clicked');
     }
+
+    useScrollAnimation();
 
     return (
         <>
@@ -59,24 +62,24 @@ const Home = () => {
                     </div>
 
                     <div className="sectionDescriptionContainer">
-                        <p className="sectionDescriptionText">Sequorr brings people, movement, and motivation together — so staying active feels natural, social, and sustainable.</p>
+                        <p className="sectionDescriptionText reveal">Sequorr brings people, movement, and motivation together — so staying active feels natural, social, and sustainable.</p>
                     </div>
                 </div>
 
                 <div className={styles.aboutBentoGrid}>
                     <div className={`${styles.bentoItem} ${styles.aboutBentoItemOne}`}>
-                        <h1 className={styles.aboutBentoTitle}>Fitness Together</h1>
-                        <p className={styles.aboutBentoDescription}>Sequorr is built around shared movement, encouragement, and showing up together.</p>
+                        <h1 className={`${styles.aboutBentoTitle} reveal`}>Fitness Together</h1>
+                        <p className={`${styles.aboutBentoDescription} reveal`}>Sequorr is built around shared movement, encouragement, and showing up together.</p>
                     </div>
 
                     <div className={`${styles.bentoItem} ${styles.aboutBentoItemTwo}`}>
-                        <h1 className={styles.aboutBentoTitle}>Simple. Human. Real.</h1>
-                        <p className={styles.aboutBentoDescription}>No complicated setup. Just movement that fits into everyday life.</p>
+                        <h1 className={`${styles.aboutBentoTitle} reveal`}>Simple. Human. Real.</h1>
+                        <p className={`${styles.aboutBentoDescription} reveal`}>No complicated setup. Just movement that fits into everyday life.</p>
                     </div>
 
                     <div className={`${styles.bentoItem} ${styles.aboutBentoItemThree}`}>
-                        <h1 className={styles.aboutBentoTitle}>Movement that feels lighter.</h1>
-                        <p className={styles.aboutBentoDescription}>When fitness feels social and supportive, staying active becomes easier to enjoy.</p>
+                        <h1 className={`${styles.aboutBentoTitle} reveal`}>Movement that feels lighter.</h1>
+                        <p className={`${styles.aboutBentoDescription} reveal`}>When fitness feels social and supportive, staying active becomes easier to enjoy.</p>
                     </div>
 
                     <div className={`${styles.bentoItem} ${styles.aboutBentoItemFour}`}>
@@ -86,13 +89,13 @@ const Home = () => {
                     </div>
 
                     <div className={`${styles.bentoItem} ${styles.aboutBentoItemFive}`}>
-                        <h1 className={styles.aboutBentoTitle}>Consistency that lasts.</h1>
-                        <p className={styles.aboutBentoDescription}>Small efforts, shared regularly, turn into meaningful progress over time.</p>
+                        <h1 className={`${styles.aboutBentoTitle} reveal`}>Consistency that lasts.</h1>
+                        <p className={`${styles.aboutBentoDescription} reveal`}>Small efforts, shared regularly, turn into meaningful progress over time.</p>
                     </div>
 
                     <div className={`${styles.bentoItem} ${styles.aboutBentoItemSix}`}>
-                        <h1 className={styles.aboutBentoTitle}>Move with us.</h1>
-                        <p className={styles.aboutBentoDescription}>Join early and experience a more connected way to stay active.</p>
+                        <h1 className={`${styles.aboutBentoTitle} reveal`}>Move with us.</h1>
+                        <p className={`${styles.aboutBentoDescription} reveal`}>Join early and experience a more connected way to stay active.</p>
                         <div className={styles.aboutBentoButton}>
                             <p className={styles.aboutBentoButtonText}>Join the Waitlist</p>
                         </div>

@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './FeaturedBlogs.module.css';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const FeaturedBlogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+
+  useScrollAnimation();
 
   useEffect(() => {
     const fetchFeaturedBlogs = async () => {
@@ -15,7 +18,7 @@ const FeaturedBlogs = () => {
         setError(null);
 
         // Fetch featured blogs from the dedicated endpoint
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_API_URL}/blog/featured`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/blog/featured`);
 
         const data = await response.json();
 
@@ -79,7 +82,7 @@ const FeaturedBlogs = () => {
   return (
     <section className={styles.featuredBlogsSection}>
       <div className={styles.featuredBlogsHeader}>
-        <h2 className={styles.featuredBlogsTitle}>Featured Blogs</h2>
+        <h2 className={`${styles.featuredBlogsTitle} reveal`}>Featured Blogs</h2>
         <button onClick={() => navigate('/blogs')} className={styles.discoverButton}>
           Discover All
         </button>
@@ -109,7 +112,7 @@ const FeaturedBlogs = () => {
                     </div>
                 )}
 
-                <h3 className={styles.blogTitle}>{blog.title}</h3>
+                <h3 className={`${styles.blogTitle} reveal`}>{blog.title}</h3>
 
                 <div className={styles.blogMeta}>
                     <div className={styles.blogStats}>
@@ -118,7 +121,7 @@ const FeaturedBlogs = () => {
                     </span>
                     </div>
 
-                    <div className={styles.blogDate}>
+                    <div className={`${styles.blogDate} reveal`}>
                     {formatDate(blog.createdAt)}
                     </div>
                 </div>
