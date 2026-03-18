@@ -56,11 +56,11 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.socialLinks}>
-                    <a href="#" aria-label="Instagram"><img src={Insta} alt="" /></a>
-                    <a href="#" aria-label="Facebook"><img src={Facebook} alt="" /></a>
-                    <a href="#" aria-label="Reddit"><img src={Reddit} alt="" /></a>
-                    <a href="#" aria-label="X"><img src={X} alt="" /></a>
-                    <a href="mailto:contact@sequorr.com" aria-label="Email"><img src={Mail} alt="" /></a>
+                    <a href="https://www.instagram.com/sequorr_app/" target="_blank" aria-label="Instagram"><img src={Insta} alt="" /></a>
+                    <a href="https://www.facebook.com/sequorr_app/" target="_blank" aria-label="Facebook"><img src={Facebook} alt="" /></a>
+                    <a href="https://www.reddit.com/r/SEQUORR/s/mAwBhRq70V" target="_blank" aria-label="Reddit"><img src={Reddit} alt="" /></a>
+                    <a href="https://x.com/sequorr_app?s=21" target="_blank" aria-label="X"><img src={X} alt="" /></a>
+                    <a href="mailto:contact@sequorr.com" target="_blank" aria-label="Email"><img src={Mail} alt="" /></a>
                 </div>
             </div>
         </footer>

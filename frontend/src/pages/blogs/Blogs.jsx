@@ -3,6 +3,7 @@ import Navbar from '../../components/navbar/Navbar'
 import styles from './Blogs.module.css'
 
 import { GridScan } from '../../components/react-bits/gridScan/GridScan.jsx'
+import FeaturedBlogs from '../../components/featuredBlogs/FeaturedBlogs'
 import Movement from '../../components/movement/Movement'
 import Footer from '../../components/footer/Footer'
 
@@ -41,6 +42,9 @@ const Blogs = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Featured Blogs Section */}
+            < FeaturedBlogs />
 
             {/* Movement Section */}
             < Movement />

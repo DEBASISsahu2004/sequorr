@@ -41,6 +41,20 @@ body {
   color: white;
 }
 
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
