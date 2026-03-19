@@ -182,8 +182,7 @@
     gap: 12px;
     margin-top: 8px;
     background-color: rgba(var(--primary-green-rgb), 0.4);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
+
     padding: 6px;
     text-align: center;
     border-radius: 1000px;
@@ -192,24 +191,30 @@
 .typeTagItem {
     cursor: pointer;
     transition: var(--transition-smooth);
-    color: rgba(255, 255, 255, 0.6);
+    color: white;
     font-size: clamp(12px, 1.5vw, 14px);
-    font-weight: 500;
     position: relative;
     padding: 8px 20px;
     white-space: nowrap;
     user-select: none;
+    border-radius: 1000px;
 }
 
 .typeTagItem:hover {
     color: #FFFFFF;
+    background-color: rgba(0, 255, 34, 0.3);
+
 }
 
 .typeTagItemActive {
     color: #FFFFFF;
-    font-weight: 600;
-    background-color: rgba(var(--primary-green-rgb), 1);
-    border-radius: 1000px;
+    background-color: rgba(var(--primary-green-rgb), 0.6);
+
+}
+
+.typeTagItemActive:hover {
+    color: #FFFFFF;
+    background-color: rgba(var(--primary-green-rgb), 0.6);
 }
 
 /* Feature Type — Hide side arcs (medium screens) */
