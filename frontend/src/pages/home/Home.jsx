@@ -73,9 +73,12 @@ const Home = () => {
                     </div>
 
                     <div className={`${styles.bentoItem} ${styles.aboutBentoItemFour}`}>
-                        <div className={styles.aboutBentoButton} onClick={() => { window.scrollTo(0,0); navigate('/features'); }} style={{ cursor: 'pointer' }}>
-                            <p className={styles.aboutBentoButtonText}>Explore Features</p>
-                        </div>
+                        <button 
+                            className={styles.aboutBentoButton} 
+                            onClick={() => { window.scrollTo(0, 0); navigate('/features'); }}
+                        >
+                            Explore Features
+                        </button>
                     </div>
 
                     <div className={`${styles.bentoItem} ${styles.aboutBentoItemFive}`}>

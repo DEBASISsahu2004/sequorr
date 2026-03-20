@@ -165,21 +165,33 @@
 
 /* Buttons in Bento */
 .aboutBentoButton {
+    padding: 10px 16px;
+    border-radius: 100px;
+    font-size: clamp(13px, 2vw, 16px);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: 2px solid rgba(26, 187, 4, 0.626);
+    background: radial-gradient(50% 50% at 50% 50%, #3bef41 0%, #67f96c 100%);
+    box-shadow: 0 0 24px 0 rgba(46, 238, 52, 0.60);
     color: #FFFFFF;
-    border: 2px solid rgba(255, 255, 255, 0.20);
-    background: radial-gradient(50% 50% at 50% 50%, #70d07d 0%, var(--dark-green) 100%);
-    box-shadow: 0 0 24px 0 rgba(var(--primary-green-rgb), 0.60);
-    backdrop-filter: var(--glass-blur);
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-weight: 600;
+    letter-spacing: -1px;
+    pointer-events: auto;
     width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.aboutBentoButtonText {
-    margin: 0;
-    font-size: 14px;
+.aboutBentoButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 30px rgba(46, 238, 52, 0.80);
 }
+
+.aboutBentoButton:active {
+    transform: translateY(2px);
+}
+
 
 /* Responsive Optimization */
 
