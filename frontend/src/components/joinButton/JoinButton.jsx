@@ -1,9 +1,10 @@
-import React from 'react';
+import { useModal } from '../../context/ModalContext';
 import styles from './JoinButton.module.css';
 
 const JoinButton = ({ className }) => {
+  const { openJoinModal } = useModal();
   const handleJoinClick = () => {
-    console.log('Join the Movement clicked');
+    openJoinModal();
   };
 
   return (

@@ -16,11 +16,13 @@ const ContactUs = lazy(() => import("./pages/contactUs/ContactUs"));
 const Blog = lazy(() => import("./pages/blog/Blog"));
 
 import Loading from "./components/loading/Loading";
+import { ModalProvider } from "./context/ModalContext";
+import JoinTheMovement from "./components/joinTheMovement/JoinTheMovement";
 
 function App() {
   return (
-    <>
-      <Toaster />
+    <ModalProvider>
+      <Toaster position="top-center" containerStyle={{ zIndex: 10001 }} />
       <Router>
         <Suspense fallback={<Loading />}>
           <Routes>
@@ -33,7 +35,8 @@ function App() {
           </Routes>
         </Suspense>
       </Router>
-    </>
+      <JoinTheMovement />
+    </ModalProvider>
   );
 }
 

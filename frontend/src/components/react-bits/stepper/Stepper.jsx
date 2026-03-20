@@ -18,6 +18,7 @@ export default function Stepper({
   nextButtonText = 'Continue',
   disableStepIndicators = false,
   renderStepIndicator,
+  canMove,
   ...rest
 }) {
   const [currentStep, setCurrentStep] = useState(initialStep);
@@ -44,6 +45,7 @@ export default function Stepper({
   };
 
   const handleNext = () => {
+    if (canMove && !canMove(currentStep)) return;
     if (!isLastStep) {
       setDirection(1);
       updateStep(currentStep + 1);
@@ -51,6 +53,7 @@ export default function Stepper({
   };
 
   const handleComplete = () => {
+    if (canMove && !canMove(currentStep)) return;
     setDirection(1);
     updateStep(totalSteps + 1);
   };
@@ -93,10 +96,17 @@ export default function Stepper({
                     }}
                   />
                 )}
-                {isNotLastStep && <StepConnector isComplete={currentStep > stepNumber} />}
+                <StepConnector isComplete={currentStep > stepNumber} />
               </React.Fragment>
             );
           })}
+          <StepIndicator 
+            step={totalSteps + 1} 
+            currentStep={currentStep} 
+            isExtra 
+            icon="🚀" 
+            disableStepIndicators 
+          />
         </div>
 
         {!isCompleted && (
@@ -183,7 +193,7 @@ export function Step({ children }) {
   return <div className="step-default">{children}</div>;
 }
 
-function StepIndicator({ step, currentStep, onClickStep, disableStepIndicators }) {
+function StepIndicator({ step, currentStep, onClickStep, disableStepIndicators, icon, isExtra }) {
   const status = currentStep === step ? 'active' : currentStep < step ? 'inactive' : 'complete';
 
   const handleClick = () => {
@@ -201,7 +211,7 @@ function StepIndicator({ step, currentStep, onClickStep, disableStepIndicators }
         transition={{ duration: 0.3 }}
         className="step-indicator-inner"
       >
-        <span className="step-number">{step}</span>
+        <span className="step-number">{icon || step}</span>
       </motion.div>
     </motion.div>
   );
